@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MealOpciones.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MealOpciones"
+    xmlns:views="clr-namespace:MealOpciones.Views"
+    xmlns:viewmodels="clr-namespace:MealOpciones.Viewmodels"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MealOpciones">
+
+    <Shell.BindingContext>
+        <viewmodels:MealViewmodel></viewmodels:MealViewmodel>
+    </Shell.BindingContext>
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate  views:PantallaInicioView}"
+        Route="Inicio" />
+    
+    <ShellContent
+    Title="Home"
+    ContentTemplate="{DataTemplate views:ListaView}"
+    Route="Lista" />
+
+
+    <ShellContent
+    Title="Home"
+    ContentTemplate="{DataTemplate views:DetallesRecetaView}"
+    Route="Detalles" />
+
+
+
+</Shell>

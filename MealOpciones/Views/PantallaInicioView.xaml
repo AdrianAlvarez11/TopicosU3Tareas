@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealOpciones.Views.PantallaInicioView"
+             Title="PantallaInicioView"
+             Shell.NavBarIsVisible="False"
+             
+             Background="#FE9F04">
+    <Grid RowDefinitions=".3*,.6*, auto, auto">
+
+        <Label HorizontalOptions="Center" VerticalOptions="Center" Margin="30,70,30,30" Grid.Row="0" FontSize="45" FontAttributes="Bold" TextColor="White"  Padding="15" Text="BIENVENIDO"></Label>
+
+        <Image HeightRequest="350" Grid.Row="1" VerticalOptions="Start" HorizontalOptions="Center" Margin="30,0,30,0" Source="logomeal.png"></Image>
+        <Button WidthRequest="270" FontSize="36" BorderWidth="2" BorderColor="#7B571D" CornerRadius="10" BackgroundColor="White" TextColor="#7B571D" FontAttributes="Bold" Margin="20"  Grid.Row="2" Text="Comenzar"></Button>
+        <Label Margin="30,30,30,60" Grid.Row="3" FontSize="25" HorizontalTextAlignment="Center" Text="Por: Adrián Alvarez Farías"></Label>
+        
+    </Grid>
+</ContentPage>

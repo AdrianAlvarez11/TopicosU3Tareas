@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealOpciones.Views.RecetaChicaView"
+             BackgroundColor="#FE9F04">
+    <Border Stroke="Black" StrokeThickness="2" Margin="10" Padding="5,5,0,5"  BackgroundColor="White">
+    
+        <Grid ColumnDefinitions=".5*,.5*" RowDefinitions="auto,auto,auto,auto">
+            <Image Margin="10" Grid.Column="0" Grid.RowSpan="4" Source="enchiladas"></Image>
+            <Label  VerticalOptions="Center" HorizontalOptions="Center" TextColor="black" Grid.Column="1" Grid.Row="0" FontSize="Medium" Text="Enchiladas suizas"></Label>
+            <Label  VerticalOptions="Center" HorizontalOptions="Center" TextColor="black" Grid.Column="1"  Grid.Row="1" FontSize="Caption" Text="Comida"></Label>
+            <Label  VerticalOptions="Center" HorizontalOptions="Center" TextColor="black" Grid.Column="1"  Grid.Row="2" FontSize="Caption" Text="4 porciones"></Label>
+            <Label  VerticalOptions="Center" HorizontalOptions="Center" TextColor="black" Grid.Column="1" Grid.Row="3" FontSize="Caption"  Text="45 min"></Label>
+            
+        </Grid>
+    </Border>
+</ContentView>

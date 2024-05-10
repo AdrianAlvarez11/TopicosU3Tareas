@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealOpciones.Views.ListaView"
+             xmlns:views="clr-namespace:MealOpciones.Views" 
+             xmlns:viewmodels="clr-namespace:MealOpciones.Viewmodels"
+             x:DataType="viewmodels:MealViewmodel"
+             
+             Title="" 
+             Shell.BackgroundColor="#FE9F04"
+             BackgroundColor="#FE9F04">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  IconImageSource="btnagregar.png"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Resources>
+        <DataTemplate x:Key="RecetaTemplate">
+            <views:RecetaChicaView></views:RecetaChicaView>
+
+        </DataTemplate>
+    </ContentPage.Resources>
+    
+    <Grid RowDefinitions=".1*,.9*">
+        <Label Grid.Row="0" HorizontalOptions="Center" Margin="30,10,30,30" FontSize="25" FontAttributes="Bold" Text="x Recetas registradas:"></Label>
+        
+        <CollectionView Margin="0,10,0,0" BackgroundColor="White" Grid.Row="1" ItemsSource="{Binding ComidasPrueba}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <views:RecetaChicaView></views:RecetaChicaView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+    </Grid>
+    
+</ContentPage>
