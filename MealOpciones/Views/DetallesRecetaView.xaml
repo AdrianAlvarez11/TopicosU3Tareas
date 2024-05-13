@@ -2,11 +2,72 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MealOpciones.Views.DetallesRecetaView"
-             Title="DetallesRecetaView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:viewmodels="clr-namespace:MealOpciones.Viewmodels"
+             x:DataType="viewmodels:MealViewmodel"
+             Title="" 
+             Shell.BackgroundColor="#FE9F04"
+             BackgroundColor="#FE9F04"
+ 
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="iconoeditar.png" Command="{Binding VerEditarCommand}" ></ToolbarItem>
+        <ToolbarItem IconImageSource="iconoeliminar.png" Command="{Binding VerEliminarCommand}"  ></ToolbarItem>
+        <ToolbarItem IconImageSource="iconocerrar.png" Command="{Binding IniciarCommand}" ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    
+        
+    <Border  StrokeThickness="2" Stroke="Black" Margin="15,0,15,15" Background="White">
+
+
+        <Grid RowDefinitions="*" ColumnDefinitions="*">
+            <ScrollView Grid.Row="0" >
+
+                 <VerticalStackLayout>
+                     <Label HorizontalTextAlignment="Center"  Margin="20,10,20,0" FontSize="40" FontAttributes="Bold" TextColor="#CC891E" Text="{Binding Comida.Nombre}"></Label>
+                    <Label HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10" TextColor="#7B571D" Text="{Binding Comida.Tipo}"></Label>
+                    <Image Margin="20,0,20,10"  HorizontalOptions="Center" Source="{Binding Comida.URLImagen}"></Image>
+                    
+                     <Label Margin="20,0,20,0"  HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span TextColor="#7B571D" Text="Tiempo de preparacion:"></Span>
+                                <Span TextColor="#7B571D" Text="{Binding Comida.TiempoPreparacion}"></Span>
+                                <Span TextColor="#7B571D" Text=" min"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                     <Label Margin="0,0,20,0"  HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span TextColor="#7B571D" Text="Porciones: "></Span>
+                                <Span TextColor="#7B571D" Text="{Binding Comida.Porciones}"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                     </Label>
+
+                    <Label LineBreakMode="WordWrap" Margin="20,10,20,20" Text="{Binding Comida.Descripción}" TextColor="Black"></Label>
+                    <Label HorizontalTextAlignment="Center" TextColor="#7B571D" Text="Ingredientes:" ></Label>
+                    <Label Margin="20,0,20,20" LineBreakMode="WordWrap" TextColor="Black" Text="{Binding Comida.Ingredientes}" ></Label>
+                    <Label HorizontalTextAlignment="Center" TextColor="#7B571D" Text="Pasos:" ></Label>
+                    <Label Margin="20,0,20,20" LineBreakMode="WordWrap" TextColor="Black" Text="{Binding Comida.Pasos}" ></Label>
+                 </VerticalStackLayout>
+            </ScrollView>
+
+
+            
+
+            
+
+            
+
+            
+
+
+        </Grid>
+    </Border>
+    
+
 </ContentPage>

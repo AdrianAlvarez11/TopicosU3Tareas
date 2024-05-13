@@ -7,27 +7,49 @@
     xmlns:views="clr-namespace:MealOpciones.Views"
     xmlns:viewmodels="clr-namespace:MealOpciones.Viewmodels"
     Shell.FlyoutBehavior="Disabled"
+    
     Title="MealOpciones">
 
     <Shell.BindingContext>
         <viewmodels:MealViewmodel></viewmodels:MealViewmodel>
     </Shell.BindingContext>
 
+    
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate  views:PantallaInicioView}"
         Route="Inicio" />
     
     <ShellContent
+ Title="Home"
+ ContentTemplate="{DataTemplate views:EditarView}"
+ Route="Editar" />    
+    
+    <ShellContent
+    Title="Home"
+    ContentTemplate="{DataTemplate views:AgregarView}"
+    Route="Agregar" />
+    
+
+    <ShellContent
     Title="Home"
     ContentTemplate="{DataTemplate views:ListaView}"
     Route="Lista" />
-
-
+    
     <ShellContent
     Title="Home"
     ContentTemplate="{DataTemplate views:DetallesRecetaView}"
     Route="Detalles" />
+
+    <ShellContent
+Title="Home"
+ContentTemplate="{DataTemplate views:EliminarView}"
+Route="Eliminar" />
+
+
+
+
+
 
 
 

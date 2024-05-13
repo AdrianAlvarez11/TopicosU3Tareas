@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace MealOpciones.Models
 {
-    public enum Tipos { Desayuno, Comida, Cena, Snack }
+    public enum Tipos { Desayuno, Almuerzo, Cena, Snack }
     public class ComidaModel
     {
         public string Nombre { get; set; } = null!;
         public string Descripción { get; set; } = null!;
         public string Ingredientes { get; set; } = null!;
+        public string URLImagen { get; set; } = null!;
         public int TiempoPreparacion { get; set; }
         public int Porciones { get; set; }
         public string Pasos { get; set; }=null!;

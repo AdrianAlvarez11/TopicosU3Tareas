@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MealOpciones.Views.EliminarView"
+               BackgroundColor="#FE9F04"
+                xmlns:viewmodels="clr-namespace:MealOpciones.Viewmodels"
+               x:DataType="viewmodels:MealViewmodel"
+               Shell.NavBarIsVisible="False"
+             Title="EliminarView">
+
+    <Border  StrokeThickness="2" Stroke="Black" Margin="40,200,40,200" Background="White">
+        <Grid RowDefinitions=".7*,.3*" ColumnDefinitions=".5*,.5*">
+
+
+            <VerticalStackLayout Grid.ColumnSpan="2" VerticalOptions="Center">
+                <Label FontFamily="Microsoft YaHei UI" HorizontalTextAlignment="Center"  Margin="20,10,20,0" FontSize="30" FontAttributes="Bold" TextColor="Black" Text="¿Seguro que quieres eliminar la receta...?"></Label>
+                <Label FontFamily="Microsoft YaHei UI" HorizontalTextAlignment="Center"  Margin="20,10,20,0" FontSize="30" FontAttributes="Bold" TextColor="#CC891E" Text="{Binding Comida.Nombre}"></Label>
+                
+
+            </VerticalStackLayout>
+
+            <Button Command="{Binding EliminarCommand}" BackgroundColor="LightGreen" Grid.Row="1" Margin="10"  Text="Confirmar"></Button>
+            <Button Command="{Binding IniciarCommand}" Grid.Row="1" BackgroundColor="IndianRed" Grid.Column="1" Margin="10" Text="Cancelar"></Button>
+        </Grid>
+    </Border>
+</ContentPage>

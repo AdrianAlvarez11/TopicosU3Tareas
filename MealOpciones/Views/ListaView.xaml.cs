@@ -1,3 +1,6 @@
+using MealOpciones.Models;
+using MealOpciones.Viewmodels;
+
 namespace MealOpciones.Views;
 
 public partial class ListaView : ContentPage
@@ -6,4 +9,17 @@ public partial class ListaView : ContentPage
 	{
 		InitializeComponent();
 	}
+
+
+    private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+		
+
+    }
+
+    private async void ColView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        string? previous = (e.PreviousSelection.FirstOrDefault() as ComidaModel)?.Nombre;
+        string? current = (e.CurrentSelection.FirstOrDefault() as ComidaModel)?.Nombre;
+    }
 }
