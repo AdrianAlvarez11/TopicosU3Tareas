@@ -29,7 +29,7 @@
     </ContentPage.Resources>
     
     <Grid RowDefinitions=".1*,auto,.9*" ColumnDefinitions=".5*,.5*">
-        <Label Grid.ColumnSpan="2" Grid.Row="0" HorizontalOptions="Center" Margin="30,10,30,0" FontSize="25" FontAttributes="Bold" Text="Recetas registradas:"></Label>
+        <Label Grid.ColumnSpan="2" Grid.Row="0" HorizontalOptions="Center" Margin="30,10,30,0" FontSize="30" FontAttributes="Bold" Text="Recetas registradas:"></Label>
 
         <Picker  Grid.Row="1" ItemsSource="{Binding ListaTipos}" SelectedItem="{Binding TipoSeleccionado}"  FontSize="18" TitleColor="Black" BackgroundColor="White" Margin="20,0,20,10" TextColor="#CC891E" Title="Categoría:"></Picker>
         <Picker  Grid.Row="1" Grid.Column="2" ItemsSource="{Binding ListaFiltros}"  SelectedItem="{Binding FiltroSeleccionado}"  FontSize="18" TitleColor="Black" BackgroundColor="White" Margin="20,0,20,10" TextColor="#CC891E" Title="Filtrar..."></Picker>
