@@ -19,7 +19,6 @@ public partial class ListaView : ContentPage
 
     private async void ColView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        string? previous = (e.PreviousSelection.FirstOrDefault() as ComidaModel)?.Nombre;
-        string? current = (e.CurrentSelection.FirstOrDefault() as ComidaModel)?.Nombre;
+
     }
 }

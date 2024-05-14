@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MealOpciones.Viewmodels
 {
@@ -22,7 +23,7 @@ namespace MealOpciones.Viewmodels
         private List<ComidaModel> ListaComidas { get; set; } = new();
         public ObservableCollection<ComidaModel> ListaFiltrada { get; set; } = new();
 
-        public ComidaModel? Comida { get; set; } //quitar el anulable
+        public ComidaModel Comida { get; set; }
         public string Error { get; set; } = "";
 
         public Tipos? TipoSeleccionado
@@ -90,7 +91,7 @@ namespace MealOpciones.Viewmodels
 
         private void VerEliminar()
         {
-            ActualizarProp(nameof(Comida));
+            PropertyChanged?.Invoke(this, new(nameof(Comida)));
             Shell.Current.GoToAsync("//Eliminar");
         }
 
@@ -130,7 +131,7 @@ namespace MealOpciones.Viewmodels
                     Error += "Introduzca un tiempo de preparación adecuado\n";
                 }
 
-                ActualizarProp(nameof(Error));
+                PropertyChanged?.Invoke(this, new(nameof(Error)));
 
                 if (Error == "")
                 {
@@ -161,8 +162,8 @@ namespace MealOpciones.Viewmodels
             indiceEditar = ListaComidas.IndexOf(Comida);
             Comida = clon;
             Error = "";
-            ActualizarProp(nameof(Error));
-            ActualizarProp(nameof(Comida));
+            PropertyChanged?.Invoke(this, new(nameof(Error)));
+            PropertyChanged?.Invoke(this, new(nameof(Comida)));
             Shell.Current.GoToAsync("//Editar");
 
 
@@ -172,10 +173,9 @@ namespace MealOpciones.Viewmodels
         {
 
             Comida = c;
-            ActualizarProp(nameof(Comida));
+            PropertyChanged?.Invoke(this, new(nameof(Comida)));
             Shell.Current.GoToAsync("//Detalles");
-            
-            
+
         }
 
         private void Agregar()
@@ -212,7 +212,7 @@ namespace MealOpciones.Viewmodels
                 Error += "Introduzca un tiempo de preparación adecuado\n";
             }
 
-            ActualizarProp(nameof(Error));
+            PropertyChanged?.Invoke(this, new(nameof(Error)));
 
             if (Error == "")
             {
@@ -228,7 +228,7 @@ namespace MealOpciones.Viewmodels
         private void VerAgregar()
         {
             Comida = new();
-            ActualizarProp(nameof(Comida));
+            PropertyChanged?.Invoke(this, new(nameof(Comida)));
             Shell.Current.GoToAsync("//Agregar");
         }
 
@@ -282,20 +282,17 @@ namespace MealOpciones.Viewmodels
                     ListaFiltrada.Add(comida);
                 }
 
-                ActualizarProp(nameof(ListaFiltrada));
+                PropertyChanged?.Invoke(this, new(nameof(ListaFiltrada)));
             }
             
 
             
             
         }
-
-
         private void Iniciar()
         {
             Error = "";
-            Comida=null;
-            ActualizarProp(nameof(Comida));
+            PropertyChanged?.Invoke(this, new(nameof(Comida)));
             Shell.Current.GoToAsync("//Lista");
         }
 
@@ -316,11 +313,6 @@ namespace MealOpciones.Viewmodels
                     ListaComidas.AddRange(lista);
                 }
             }
-        }
-
-        private void ActualizarProp(string nombre)
-        {
-            PropertyChanged?.Invoke(this, new(nameof(nombre)));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
