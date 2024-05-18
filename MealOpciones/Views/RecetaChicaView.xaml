@@ -6,8 +6,16 @@
     <Border Stroke="Black" StrokeThickness="2" Margin="10" Padding="5,5,0,5"  BackgroundColor="White">
     
         <Grid ColumnDefinitions=".5*,.5*" RowDefinitions="auto,auto,auto,auto">
-            <Image Margin="10" Grid.Column="0" Grid.RowSpan="4" Source="{Binding URLImagen}"></Image>
-            <Label  VerticalOptions="Center" Margin="10,0,10,0" HorizontalOptions="Center" TextColor="#CC891E" Grid.Column="1" Grid.Row="0" FontSize="20" Text="{Binding Nombre}"></Label>
+            <Image Margin="10" Grid.Column="0" Grid.RowSpan="4" Source="{Binding URLImagen}">
+                <Image.Shadow>
+                    <Shadow Brush="Black"
+                Offset="-40,10"
+                Radius="20"
+                Opacity=".7" />
+                </Image.Shadow>
+            </Image>
+            
+            <Label  VerticalOptions="Center" Margin="10,0,10,0" HorizontalTextAlignment="Center" TextColor="#CC891E" Grid.Column="1" Grid.Row="0" FontAttributes="Bold" FontSize="20" Text="{Binding Nombre}"></Label>
             <Label  VerticalOptions="Center" HorizontalOptions="Center" TextColor="black" Grid.Column="1"  Grid.Row="1" FontSize="18" Text="{Binding Tipo}"></Label>
 
             <Label  VerticalOptions="Center" HorizontalOptions="Center"  Grid.Column="1"  Grid.Row="2" FontSize="18">

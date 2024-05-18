@@ -57,11 +57,10 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\btnagregar.png" />
-	  <None Remove="Resources\Images\enchiladas.jpg" />
 	  <None Remove="Resources\Images\iconocerrar.png" />
 	  <None Remove="Resources\Images\iconoeditar.png" />
 	  <None Remove="Resources\Images\iconoeliminar.png" />
-	  <None Remove="Resources\Images\logomeal.png" />
+	  <None Remove="Resources\Images\logofin.png" />
 	</ItemGroup>
 
 	<ItemGroup>

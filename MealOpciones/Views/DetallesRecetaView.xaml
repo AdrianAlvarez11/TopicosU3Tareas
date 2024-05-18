@@ -25,11 +25,12 @@
             <ScrollView Grid.Row="0" >
 
                  <VerticalStackLayout>
-                     <Label HorizontalTextAlignment="Center"  Margin="20,10,20,0" FontSize="40" FontAttributes="Bold" TextColor="#CC891E" Text="{Binding Comida.Nombre}"></Label>
+                    <Label HorizontalTextAlignment="Center"  Margin="20,10,20,0" FontSize="40" FontAttributes="Bold" TextColor="#CC891E" Text="{Binding Comida.Nombre}">
+                    </Label>
                     <Label HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10" TextColor="#7B571D" Text="{Binding Comida.Tipo}"></Label>
-                    <Image Margin="20,0,20,10"  HorizontalOptions="Center" Source="{Binding Comida.URLImagen}"></Image>
+                    <Image Margin="20,0,20,20"  HorizontalOptions="Center" Source="{Binding Comida.URLImagen}"></Image>
                     
-                     <Label Margin="20,0,20,0"  HorizontalTextAlignment="Center">
+                     <Label Margin="20,0,20,5"  HorizontalTextAlignment="Center">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span TextColor="#7B571D" Text="Tiempo de preparacion:"></Span>
